@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Item from "./Item";
+import Filter from "./Filter";
 
 function ShoppingList({ items }) {
   const [selectedCategory, changeCategory] = useState("All");
@@ -26,18 +27,7 @@ function ShoppingList({ items }) {
 
   return (
     <div className="ShoppingList">
-      <div className="Filter">
-        <select
-          name="filter"
-          value={selectedCategory}
-          onChange={(e) => handleChange(e.target.value)}
-        >
-          <option value="All">Filter by category</option>
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Dessert">Dessert</option>
-        </select>
-      </div>
+      <Filter updateList={handleChange}/>
       <ul className="Items">{filter(items)}</ul>
     </div>
   );
