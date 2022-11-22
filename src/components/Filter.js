@@ -1,4 +1,4 @@
-function Filter({ updateList, category }) {
+function Filter({ updateList }) {
   return (
     <div className="Filter">
       <select name="filter" onChange={(e) => updateList(e.target.value)}>
